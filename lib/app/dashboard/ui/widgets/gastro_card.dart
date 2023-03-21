@@ -1,63 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:maga_app/app/dashboard/data/gastro_model.dart';
-import 'package:maga_app/app/shared/ui/default_page.dart';
-
-final data = [
-  GastroModel(
-    name: 'Cafe Corner',
-    street: 'Grafenstr.',
-    houseNr: '33',
-    postalCode: 64295,
-    city: 'Darmstadt',
-    distance: '0.8 km',
-    queue: 4,
-    averageWaitingTime: '3 - 5 \n min',
-    backgroundImageUrl:
-        'https://www.p-stadtkultur.de/wp-content/uploads/2014/09/cafes.jpg',
-  ),
-  GastroModel(
-    name: 'Grizzly Bar / Lounge',
-    street: 'Elisabethenstraße',
-    houseNr: '32a',
-    postalCode: 64295,
-    city: 'Darmstadt',
-    distance: '1.2 km',
-    queue: 0,
-    averageWaitingTime: '5 - 15 \n min',
-    backgroundImageUrl:
-        'https://media-cdn.tripadvisor.com/media/photo-s/10/e5/73/92/photo1jpg.jpg',
-  )
-];
-
-class DashboardPage extends StatefulWidget {
-  const DashboardPage({super.key});
-
-  @override
-  State<DashboardPage> createState() => _DashboardPageState();
-}
-
-class _DashboardPageState extends State<DashboardPage> {
-  @override
-  Widget build(BuildContext context) {
-    return DefaultPage(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
-        child: Center(
-            child: ListView.builder(
-          itemCount: data.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: GastroCard(
-                gastroModel: data[index],
-              ),
-            );
-          },
-        )),
-      ),
-    );
-  }
-}
+import 'package:maga_app/app/dashboard/data/models/gastro_model.dart';
 
 class GastroCard extends StatelessWidget {
   final GastroModel gastroModel;
@@ -71,7 +14,7 @@ class GastroCard extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(gastroModel.backgroundImageUrl),
+          image: CachedNetworkImageProvider(gastroModel.backgroundImageUrl),
         ),
         borderRadius: const BorderRadius.all(
           Radius.circular(15),
@@ -89,7 +32,7 @@ class GastroCard extends StatelessWidget {
                     height: 54,
                     width: 80,
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Theme.of(context).primaryColorLight,
                       borderRadius: BorderRadius.circular(18),
                     ),
                     child: Row(
@@ -111,7 +54,7 @@ class GastroCard extends StatelessWidget {
                     height: 54,
                     width: 80,
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Theme.of(context).primaryColorLight,
                       borderRadius: BorderRadius.circular(18),
                     ),
                     child: Center(
