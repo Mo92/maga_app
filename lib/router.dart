@@ -15,7 +15,7 @@ class MagaRouter {
     child: const DashboardPage(),
   );
 
-  ///
+  /// define navigation behavior here
   static Route<dynamic> generateRoute(RouteSettings settings) {
     late Widget page;
     switch (settings.name) {

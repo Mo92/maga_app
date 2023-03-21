@@ -13,6 +13,7 @@ class MagaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Maga App',
+      // TODO(Mo): create theme and outsource
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

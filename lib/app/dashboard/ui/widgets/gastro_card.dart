@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:maga_app/app/dashboard/data/models/gastro_model.dart';
+import 'package:maga_app/mage_theme.dart';
 
 class GastroCard extends StatelessWidget {
   final GastroModel gastroModel;
@@ -16,9 +17,7 @@ class GastroCard extends StatelessWidget {
           fit: BoxFit.cover,
           image: CachedNetworkImageProvider(gastroModel.backgroundImageUrl),
         ),
-        borderRadius: const BorderRadius.all(
-          Radius.circular(15),
-        ),
+        borderRadius: const BorderRadius.all(Radius.circular(15)),
       ),
       child: Stack(
         children: [
@@ -28,6 +27,7 @@ class GastroCard extends StatelessWidget {
               alignment: Alignment.topRight,
               child: Column(
                 children: [
+                  // TODO(Mo): outsource in seperated widget
                   Container(
                     height: 54,
                     width: 80,
@@ -41,8 +41,7 @@ class GastroCard extends StatelessWidget {
                       children: [
                         Text(
                           gastroModel.queue.toString(),
-                          style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.info,
                         ),
                         const SizedBox(width: 4),
                         const Icon(Icons.people_outline, size: 28)
@@ -50,6 +49,7 @@ class GastroCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
+                  // TODO(Mo): outsource in seperated widget
                   Container(
                     height: 54,
                     width: 80,
@@ -60,10 +60,7 @@ class GastroCard extends StatelessWidget {
                     child: Center(
                       child: Text(
                         gastroModel.averageWaitingTime.toString(),
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.info,
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -95,14 +92,11 @@ class GastroCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            gastroModel.name,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
+                          Text(gastroModel.name,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .info
+                                  .copyWith(color: Colors.white)),
                           Expanded(
                             child: Text(
                               '${gastroModel.street} ${gastroModel.houseNr}, ${gastroModel.postalCode} ${gastroModel.city}',

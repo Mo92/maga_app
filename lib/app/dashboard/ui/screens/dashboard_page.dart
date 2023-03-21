@@ -49,9 +49,7 @@ class _DashboardPageState extends State<DashboardPage> {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(bottom: 12),
-              child: GastroCard(
-                gastroModel: gastros[index],
-              ),
+              child: GastroCard(gastroModel: gastros[index]),
             );
           },
         )),

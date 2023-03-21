@@ -12,8 +12,12 @@ class DashboardCubit extends Cubit<DashboardState> {
       final gastros = await _dashboardRepository.getGastros();
 
       emit(DashboardLoaded(gastros: gastros));
-    } on Error catch (e) {
+    } on Exception catch (e) {
       emit(DashboardError(errorMessage: e.toString()));
     }
+  }
+
+  void loadGastroDetails() async {
+    // TODO(Mo): implement
   }
 }
