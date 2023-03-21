@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maga_app/app/dashboard/data/dashboard_repository.dart';
 
-import 'app/dashboard/ui/dashboard_page.dart';
+import 'app/dashboard/ui/screens/dashboard_page.dart';
 
 /// Handles all PAGE routing in the app. This only applies to Full Pages like "Dashboard"
 class MagaRouter {
@@ -8,14 +10,20 @@ class MagaRouter {
   static const String dashboardRoute = '/dashboard';
 
   /// this page will be used as fallback, when there is no matching route
-  static const Widget defaultPage = DashboardPage();
+  static Widget defaultPage = RepositoryProvider<DashboardRepository>(
+    create: (_) => DashboardRepository(),
+    child: const DashboardPage(),
+  );
 
-  ///
+  /// define navigation behavior here
   static Route<dynamic> generateRoute(RouteSettings settings) {
     late Widget page;
     switch (settings.name) {
       case dashboardRoute:
-        page = const DashboardPage();
+        page = RepositoryProvider<DashboardRepository>(
+          create: (_) => DashboardRepository(),
+          child: const DashboardPage(),
+        );
         break;
       default:
         page = defaultPage;

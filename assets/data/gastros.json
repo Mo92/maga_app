@@ -1,0 +1,46 @@
+[
+   {
+      "name":"Cafe Corner",
+      "street":"Grafenstr.",
+      "houseNr":"33",
+      "postalCode":64295,
+      "city":"Darmstadt",
+      "distance":"0.8 km",
+      "queue":4,
+      "averageWaitingTime":"3 - 5 \n min",
+      "backgroundImageUrl":"https://www.p-stadtkultur.de/wp-content/uploads/2014/09/cafes.jpg"
+   },
+   {
+      "name":"Grizzly Bar / Lounge",
+      "street":"Elisabethenstraße",
+      "houseNr":"32a",
+      "postalCode":64295,
+      "city":"Darmstadt",
+      "distance":"1.2 km",
+      "queue":0,
+      "averageWaitingTime":"5 - 15 \n min",
+      "backgroundImageUrl":"https://media-cdn.tripadvisor.com/media/photo-s/10/e5/73/92/photo1jpg.jpg"
+   },
+   {
+      "name":"Salve",
+      "street":"Wilhelminenstraße",
+      "houseNr":"2",
+      "postalCode":6483,
+      "city":"Darmstadt",
+      "distance":"1.4 km",
+      "queue":9,
+      "averageWaitingTime":"10 - 35 \n min",
+      "backgroundImageUrl":"https://cdn.gastroguide.de/betrieb/188772/galerie/album/userphotos/f1356614263.jpg"
+   },
+   {
+      "name":"Hochland Kaffee",
+      "street":"Luisenstraße",
+      "houseNr":"16",
+      "postalCode":6483,
+      "city":"Darmstadt",
+      "distance":"2.1 km",
+      "queue":2,
+      "averageWaitingTime":"3- 5 \n min",
+      "backgroundImageUrl":"https://cdn.offen.net/img/logos/640x640-hochland-kaffee-bar.jpg"
+   }
+]

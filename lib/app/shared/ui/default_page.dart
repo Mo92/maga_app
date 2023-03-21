@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-/// Wrapper for page contet
-/// `body` represents the Page content
+/// Wrapper for page contet <br>
+/// `body` represents the Page content <br>
+/// this widget shows a appbar with a searching field by default <br>
+/// if `appBar`is set, ensure that `hasSearchBar` is set to `false`
 class DefaultPage extends StatelessWidget {
   final Widget body;
   final bool hasSearchBar;
